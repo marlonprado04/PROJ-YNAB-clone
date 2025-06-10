@@ -1,7 +1,6 @@
 package br.com.marlonprado.ynab_clone_api.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
@@ -27,7 +26,7 @@ public class Account {
 
     private boolean isBudgetedIncluded;
 
-    private LocalDate balanceDate;
+    private LocalDateTime balanceDate;
 
     private LocalDateTime createdAt;
 
