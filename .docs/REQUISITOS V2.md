@@ -262,7 +262,7 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - type: Enum (CHECKING, SAVINGS, INVESTMENT, CASH, CREDIT)
 - balance: BigDecimal       // Atualizado dinamicamente com base em lançamentos finalizados
 - isBudgetIncluded: Boolean // Indica se entra no orçamento
-- balanceDate: LocalDate    // Data do balanço
+- balanceDate: LocalDateTime    // Data do balanço
 - createdAt: LocalDateTime
 - updatedAt: LocalDateTime
 
