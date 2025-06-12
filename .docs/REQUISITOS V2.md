@@ -139,8 +139,8 @@ O MVP incluirá funcionalidades essenciais para permitir ao usuário controlar s
 - Campos obrigatórios:
   - `date`
   - `amount`
-  - `operationType`
-  - `account` (conta origem)
+  - `transactionType`
+  - `fromAccount` (conta origem)
   - `toAccount` (conta destino, para transferências)
   - `payee`
   - `subcategory`
@@ -284,14 +284,14 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 ### 8.4. Transaction
 
 - id: Long
-- account: FK para Account
+- fromAccount: FK para Account
 - toAccount: FK para Account (destino, para transferências) // nullable se não for transferência
 - subcategory: FK para Subcategory // nullable para transferências
 - payee: String
 - description: String
 - amount: BigDecimal
 - date: LocalDateTime
-- operationType: Enum (INCOME, EXPENSE, TRANSFER)
+- transactionType: Enum (INCOME, EXPENSE, TRANSFER)
 - transferGroupId: UUID (nullable) // Identificador compartilhado para transferências
 - recurrenceType: Enum (FIXED, INSTALLMENT, NONE)
 - recurrenceFrequency: Enum (DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
@@ -309,7 +309,6 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - month: Integer (1-12)
 - year: Integer
 - plannedAmount: BigDecimal       // Valor orçado
-- actualAmount: BigDecimal        // Calculado dinamicamente a partir dos lançamentos finalizados
 - createdAt: LocalDateTime
 - updatedAt: LocalDateTime
 
