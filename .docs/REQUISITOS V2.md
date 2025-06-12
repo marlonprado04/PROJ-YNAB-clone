@@ -33,6 +33,7 @@
     - [9.4 Transactions](#94-transactions)
     - [9.5 Budgets](#95-budgets)
   - [10. Considerações Finais](#10-considerações-finais)
+  - [Referências e Materiais de Apoio](#referências-e-materiais-de-apoio)
 
 **Projeto**: Aplicativo de Gestão Financeira Pessoal (YNAB Clone)
 
@@ -446,5 +447,18 @@ Todos os endpoints e modelos de dados usam nomes em inglês. A interface do usu�
 
 Este documento serve como base para o desenvolvimento e validação do MVP. Mudanças e ajustes podem ser aplicados conforme o projeto evolui e com base no uso real.
 
----
+## Referências e Materiais de Apoio
+
+**Referência**
+
+- [Exemplo de layout da tela de orçamentos](./refs/layouts/orcamentos.png)
+- [Exemplo de layout da tela de transações](./refs/layouts/transacoes.png)
+
+**Materiais de apoio**
+
+- [Protótipo Figma](https://www.figma.com/design/jVGa1laO8WMWhzxlJKT7TF/PROJETO--APP-FINANCEIRO?node-id=0-1&t=uwo571f7gmppxPd3-1)
+- [Diagrama do banco de dados (PlantUML)](./refs/diagrams/class-diagram.puml)
+- [Arquivo SQL de criação do banco](./refs/sql/DATABASE%20V1.sql)
+
+
 
