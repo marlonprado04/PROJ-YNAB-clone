@@ -1,4 +1,4 @@
-package br.com.marlonprado.ynab_clone_api.model.enums;
+package br.com.marlonprado.ynab_clone_api.model.enums.account;
 
 public enum AccountType {
     CHECKING,

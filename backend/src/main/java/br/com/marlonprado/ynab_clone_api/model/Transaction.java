@@ -3,7 +3,13 @@ package br.com.marlonprado.ynab_clone_api.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import br.com.marlonprado.ynab_clone_api.model.enums.transaction.RecurrenceFrequency;
+import br.com.marlonprado.ynab_clone_api.model.enums.transaction.RecurrenceType;
+import br.com.marlonprado.ynab_clone_api.model.enums.transaction.Status;
+import br.com.marlonprado.ynab_clone_api.model.enums.transaction.TransactionType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -24,12 +30,18 @@ public class Transaction {
     private boolean manualOverride;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    
 
-    // TODO Add Enum for recurrenceType (e.g. FIXED, INSTALLMENT)
-    // TODO Add Enum for recurrenceFrequency (DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
-    // TODO Add Enum for transactionType (e.g., INCOME, EXPENSE, TRANSFER)
-    // TODO Add Enum for status (e.g., PENDING, POSTED, RECONCILED, VOIDED)
+    @Enumerated(EnumType.STRING)
+    private RecurrenceType recurrenceType; 
+
+    @Enumerated(EnumType.STRING)
+    private RecurrenceFrequency recurrenceFrequency; 
+
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType; 
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
 
     // TODO Add UUID for transferGroupId (nullable if not transfer)

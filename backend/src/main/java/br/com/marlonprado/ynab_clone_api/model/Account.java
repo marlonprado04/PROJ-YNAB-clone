@@ -3,7 +3,7 @@ package br.com.marlonprado.ynab_clone_api.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import br.com.marlonprado.ynab_clone_api.model.enums.AccountType;
+import br.com.marlonprado.ynab_clone_api.model.enums.account.AccountType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
