@@ -3,6 +3,7 @@ package br.com.marlonprado.ynab_clone_api.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import br.com.marlonprado.ynab_clone_api.model.enums.AccountType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,6 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 public class Account {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -20,7 +22,7 @@ public class Account {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private String type;
+    private AccountType type;
 
     private BigDecimal balance;
 
@@ -33,5 +35,4 @@ public class Account {
     private LocalDateTime updatedAt;
 
     // TODO Add relationship with Transaction
-
 }
