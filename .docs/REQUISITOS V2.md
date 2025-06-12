@@ -146,7 +146,7 @@ O MVP incluirá funcionalidades essenciais para permitir ao usuário controlar s
   - `payee`
   - `subcategory`
   - `description`
-  - `status` (enum: PENDING, CLEARED, CANCELLED)
+  - `status` (enum: PENDING, CLEARED)
   - `recurrenceType`
   - `recurrenceFrequency`
   - `installmentCount` (se parcelado)
@@ -299,7 +299,7 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - installmentCount: Integer (nullable)
 - groupId: UUID (nullable) // Identificador compartilhado para recorrências
 - manualOverride: Boolean // padrão false, impede alterações em grupo
-- status: Enum (PENDING, CLEARED, CANCELLED) // Indica o status do lançamento
+- status: Enum (PENDING, CLEARED) // Indica o status do lançamento
 - createdAt: LocalDateTime
 - updatedAt: LocalDateTime
 
