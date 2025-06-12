@@ -457,7 +457,8 @@ Este documento serve como base para o desenvolvimento e validação do MVP. Muda
 **Materiais de apoio**
 
 - [Protótipo Figma](https://www.figma.com/design/jVGa1laO8WMWhzxlJKT7TF/PROJETO--APP-FINANCEIRO?node-id=0-1&t=uwo571f7gmppxPd3-1)
-- [Diagrama do banco de dados (PlantUML)](./refs/diagrams/class-diagram.puml)
+- [Diagrama de classes (PlantUML)](./refs/diagrams/class-diagram.puml)
+- [Diagrama do banco (Mermaid)](./refs/diagrams/database-diagram.mmd)
 - [Arquivo SQL de criação do banco](./refs/sql/DATABASE%20V1.sql)
 
 

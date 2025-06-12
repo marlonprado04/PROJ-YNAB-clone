@@ -31,6 +31,7 @@ class Subcategory {
   +String name
   +LocalDateTime createdAt
   +LocalDateTime updatedAt
+  +Long categoryId
 }
 
 class Transaction {
@@ -48,6 +49,9 @@ class Transaction {
   +Boolean isCleared
   +LocalDateTime createdAt
   +LocalDateTime updatedAt
+  +Long fromAccountId
+  +Long toAccountId
+  +Long subcategoryId
 }
 
 enum TransactionType {
@@ -63,9 +67,14 @@ enum RecurrenceType {
 }
 
 enum RecurrenceFrequency {
+  DAILY
   WEEKLY
   BIWEEKLY
   MONTHLY
+  BIMONTHLY
+  TRIMONTHLY
+  SIXMONTHLY
+  YEARLY
 }
 
 class Budget {
@@ -76,13 +85,18 @@ class Budget {
   +BigDecimal actualAmount
   +LocalDateTime createdAt
   +LocalDateTime updatedAt
+  +Long subcategoryId
 }
 
 ' RELATIONSHIPS
 Subcategory --> Category : belongs to
-Transaction --> Account : origin account
-Transaction --> Subcategory : optional
-Budget --> Subcategory : targets
-Account --> Transaction : 1 to many
+Transaction --> Account : fromAccountId
+Transaction --> Account : toAccountId
+Transaction --> Subcategory : subcategoryId
+Budget --> Subcategory : subcategoryId
+Account "1" --> "0..*" Transaction : originAccount
+Account "1" --> "0..*" Transaction : destinationAccount
+Category "1" --> "0..*" Subcategory : contains
+Subcategory "1" --> "0..*" Budget : budgets
 
 @enduml

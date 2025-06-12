@@ -1,0 +1,59 @@
+erDiagram
+    ACCOUNT {
+        Long id PK "ID"
+        String name "Nome da conta"
+        Enum type "Tipo da conta"
+        BigDecimal balance "Saldo"
+        Boolean isBudgetIncluded "Incluída no orçamento"
+        LocalDateTime balanceDate "Data do saldo"
+        LocalDateTime createdAt "Criado em"
+        LocalDateTime updatedAt "Atualizado em"
+    }
+    CATEGORY {
+        Long id PK "ID"
+        String name "Nome da categoria"
+        LocalDateTime createdAt "Criado em"
+        LocalDateTime updatedAt "Atualizado em"
+    }
+    SUBCATEGORY {
+        Long id PK "ID"
+        String name "Nome da subcategoria"
+        Long category_id FK "ID da categoria"
+        LocalDateTime createdAt "Criado em"
+        LocalDateTime updatedAt "Atualizado em"
+    }
+    TRANSACTION {
+        Long id PK "ID"
+        Long fromAccount_id FK "Conta origem"
+        Long toAccount_id FK "Conta destino"
+        Long subcategory_id FK "Subcategoria"
+        String payee "Favorecido"
+        String description "Descrição"
+        BigDecimal amount "Valor"
+        LocalDateTime date "Data"
+        Enum transactionType "Tipo (INCOME, EXPENSE, TRANSFER)"
+        UUID transferGroupId "Grupo transferência"
+        Enum recurrenceType "Recorrência"
+        Enum recurrenceFrequency "Frequência"
+        Integer installmentCount "Parcelas"
+        UUID groupId "Grupo recorrente"
+        Boolean manualOverride "Edição manual"
+        Enum status "Status (PENDING, CLEARED)"
+        LocalDateTime createdAt "Criado em"
+        LocalDateTime updatedAt "Atualizado em"
+    }
+    BUDGET {
+        Long id PK "ID"
+        Long subcategory_id FK "Subcategoria"
+        Integer month "Mês"
+        Integer year "Ano"
+        BigDecimal limitAmount "Limite"
+        LocalDateTime createdAt "Criado em"
+        LocalDateTime updatedAt "Atualizado em"
+    }
+
+    CATEGORY ||--o{ SUBCATEGORY : possui
+    SUBCATEGORY ||--o{ TRANSACTION : "tem"
+    ACCOUNT ||--o{ TRANSACTION : "origem"
+    ACCOUNT ||--o{ TRANSACTION : "destino"
+    SUBCATEGORY ||--o{ BUDGET : "define"
