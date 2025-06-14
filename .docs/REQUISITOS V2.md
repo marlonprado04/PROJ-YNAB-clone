@@ -169,7 +169,7 @@ Permitir o agendamento automático de lançamentos recorrentes (como assinaturas
   - `INSTALLMENT`: repetido por um número definido de parcelas
   - `NONE`: lançamento único
 - Parâmetros:
-  - `recurrenceFrequency`: DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY
+  - `recurrenceFrequency`: ONCE, DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY
   - `installmentCount`: obrigatório apenas para parcelados
 - Geração automática de lançamentos futuros conforme configuração:
   - Para `FIXED`: até 12 meses à frente (configurável até 5 anos)
@@ -294,8 +294,8 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - date: LocalDateTime
 - transactionType: Enum (INCOME, EXPENSE, TRANSFER)
 - transferGroupId: UUID (nullable) // Identificador compartilhado para transferências
-- recurrenceType: Enum (FIXED, INSTALLMENT, NONE)
-- recurrenceFrequency: Enum (DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
+- recurrenceType: Enum (ONCE, FIXED, INSTALLMENT)
+- recurrenceFrequency: Enum (ONCE, DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
 - installmentCount: Integer (nullable)
 - groupId: UUID (nullable) // Identificador compartilhado para recorrências
 - manualOverride: Boolean // padrão false, impede alterações em grupo

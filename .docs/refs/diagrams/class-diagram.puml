@@ -61,12 +61,13 @@ enum TransactionType {
 }
 
 enum RecurrenceType {
-  NONE
+  ONCE
   FIXED
   INSTALLMENT
 }
 
 enum RecurrenceFrequency {
+  ONCE
   DAILY
   WEEKLY
   BIWEEKLY
