@@ -1,59 +1,60 @@
 erDiagram
-    ACCOUNT {
+    account {
         Long id PK "ID"
         String name "Nome da conta"
         Enum type "Tipo da conta"
         BigDecimal balance "Saldo"
-        Boolean isBudgetIncluded "Incluída no orçamento"
-        LocalDateTime balanceDate "Data do saldo"
-        LocalDateTime createdAt "Criado em"
-        LocalDateTime updatedAt "Atualizado em"
+        Boolean is_budget_included "Incluída no orçamento"
+        LocalDateTime balance_date "Data do saldo"
+        LocalDateTime created_at "Criado em"
+        LocalDateTime upadted_at "Atualizado em"
     }
-    CATEGORY {
+    category {
         Long id PK "ID"
         String name "Nome da categoria"
-        LocalDateTime createdAt "Criado em"
-        LocalDateTime updatedAt "Atualizado em"
+        LocalDateTime created_at "Criado em"
+        LocalDateTime upadted_at "Atualizado em"
     }
-    SUBCATEGORY {
+    subcategory {
         Long id PK "ID"
         String name "Nome da subcategoria"
         Long category_id FK "ID da categoria"
-        LocalDateTime createdAt "Criado em"
-        LocalDateTime updatedAt "Atualizado em"
+        LocalDateTime created_at "Criado em"
+        LocalDateTime upadted_at "Atualizado em"
+
     }
-    TRANSACTION {
+    transaction {
         Long id PK "ID"
-        Long fromAccount_id FK "Conta origem"
-        Long toAccount_id FK "Conta destino"
+        Long from_account_id FK "Conta origem"
+        Long to_account_id FK "Conta destino"
         Long subcategory_id FK "Subcategoria"
         String payee "Favorecido"
         String description "Descrição"
         BigDecimal amount "Valor"
         LocalDateTime date "Data"
-        Enum transactionType "Tipo (INCOME, EXPENSE, TRANSFER)"
-        UUID transferGroupId "Grupo transferência"
-        Enum recurrenceType "Recorrência"
-        Enum recurrenceFrequency "Frequência"
-        Integer installmentCount "Parcelas"
-        UUID groupId "Grupo recorrente"
-        Boolean manualOverride "Edição manual"
+        Enum transaction_type "Tipo (INCOME, EXPENSE, TRANSFER)"
+        UUID transfer_group_id "Grupo transferência"
+        Enum recurrence_type "Recorrência"
+        Enum recurrence_frequency "Frequência"
+        Integer installment_count "Parcelas"
+        UUID group_id "Grupo recorrente"
+        Boolean manual_override "Edição manual"
         Enum status "Status (PENDING, CLEARED)"
-        LocalDateTime createdAt "Criado em"
-        LocalDateTime updatedAt "Atualizado em"
+        LocalDateTime created_at "Criado em"
+        LocalDateTime upadted_at "Atualizado em"
     }
-    BUDGET {
+    budget {
         Long id PK "ID"
         Long subcategory_id FK "Subcategoria"
         Integer month "Mês"
         Integer year "Ano"
-        BigDecimal limitAmount "Limite"
-        LocalDateTime createdAt "Criado em"
-        LocalDateTime updatedAt "Atualizado em"
+        BigDecimal limit_amount "Limite"
+        LocalDateTime created_at "Criado em"
+        LocalDateTime upadted_at "Atualizado em"
     }
 
-    CATEGORY ||--o{ SUBCATEGORY : possui
-    SUBCATEGORY ||--o{ TRANSACTION : "tem"
-    ACCOUNT ||--o{ TRANSACTION : "origem"
-    ACCOUNT ||--o{ TRANSACTION : "destino"
-    SUBCATEGORY ||--o{ BUDGET : "define"
+    category ||--o{ subcategory : possui
+    subcategory ||--o{ transaction : "tem"
+    account ||--o{ transaction : "origem"
+    account ||--o{ transaction : "destino"
+    subcategory ||--o{ budget : "define"
