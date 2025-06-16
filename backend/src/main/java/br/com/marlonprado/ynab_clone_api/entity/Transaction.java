@@ -2,8 +2,7 @@ package br.com.marlonprado.ynab_clone_api.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
-import jakarta.validation.constraints.NotNull;
+import java.util.UUID;
 
 import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.RecurrenceFrequency;
 import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.RecurrenceType;
@@ -18,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -66,7 +66,6 @@ public class Transaction {
     @Nullable
     private Subcategory subcategory;
 
-    // TODO Add UUID for transferGroupId (nullable if not transfer)
-    // TODO Add UUID for groupId (nullable if not fixed / installment)
-
+    private UUID transferGroupId;
+    private UUID groupId;
 }

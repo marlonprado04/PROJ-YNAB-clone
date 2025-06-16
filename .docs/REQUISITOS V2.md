@@ -177,11 +177,11 @@ Permitir o agendamento automático de lançamentos recorrentes (como assinaturas
   - Lançamentos criados com:
     - Mesmo conteúdo do original (exceto data)
     - `status = PENDING`
-    - `groupId` compartilhado
+    - `recurrenceGroupId` compartilhado
     - `manualOverride = false`
 - Lançamentos recorrentes:
   - Listados junto aos demais
-  - Mantêm vínculo via `groupId`
+  - Mantêm vínculo via `recurrenceGroupId`
   - Permitem atualização individual (`manualOverride = true`) ou em grupo
 
 ##### 5.3.1.1 Controle de Edição de Lançamentos Recorrentes
@@ -262,46 +262,46 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - name: String
 - type: Enum (CHECKING, SAVINGS, INVESTMENT, CASH, CREDIT)
 - balance: BigDecimal       // Atualizado dinamicamente com base em lançamentos finalizados
-- isBudgetIncluded: Boolean // Indica se entra no orçamento
-- balanceDate: LocalDateTime    // Data do balanço
-- createdAt: LocalDateTime
-- updatedAt: LocalDateTime
+- is_budget_included: Boolean // Indica se entra no orçamento
+- balance_date: LocalDateTime    // Data do balanço
+- created_at: LocalDateTime
+- updated_at: LocalDateTime
 
 ### 8.2. Category
 
 - id: Long
 - name: String       // Nome da categoria
-- createdAt: LocalDateTime
-- updatedAt: LocalDateTime
+- created_at: LocalDateTime
+- updated_at: LocalDateTime
 
 ### 8.3. Subcategory
 
 - id: Long
 - name: String
 - category: FK para Category
-- createdAt: LocalDateTime
-- updatedAt: LocalDateTime
+- created_at: LocalDateTime
+- updated_at: LocalDateTime
 
 ### 8.4. Transaction
 
 - id: Long
-- fromAccount: FK para Account
-- toAccount: FK para Account (destino, para transferências) // nullable se não for transferência
+- from_account: FK para Account
+- to_account: FK para Account (destino, para transferências) // nullable se não for transferência
 - subcategory: FK para Subcategory // nullable para transferências
 - payee: String
 - description: String
 - amount: BigDecimal
 - date: LocalDateTime
-- transactionType: Enum (INCOME, EXPENSE, TRANSFER)
-- transferGroupId: UUID (nullable) // Identificador compartilhado para transferências
-- recurrenceType: Enum (ONCE, FIXED, INSTALLMENT)
-- recurrenceFrequency: Enum (ONCE, DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
+- transaction_type: Enum (INCOME, EXPENSE, TRANSFER)
+- transfer_group_id: UUID (nullable) // Identificador compartilhado para transferências
+- recurrence_type: Enum (ONCE, FIXED, INSTALLMENT)
+- recurrence_frequency: Enum (ONCE, DAILY, WEEKLY, BIWEEKLY, MONTHLY, BIMONTHLY, TRIMONTHLY, SIXMONTHLY, YEARLY) (nullable)
 - installmentCount: Integer (nullable)
-- groupId: UUID (nullable) // Identificador compartilhado para recorrências
-- manualOverride: Boolean // padrão false, impede alterações em grupo
+- recurrence_group_id: UUID (nullable) // Identificador compartilhado para recorrências
+- manual_override: Boolean // padrão false, impede alterações em grupo
 - status: Enum (PENDING, CLEARED) // Indica o status do lançamento
-- createdAt: LocalDateTime
-- updatedAt: LocalDateTime
+- created_at: LocalDateTime
+- updated_at: LocalDateTime
 
 ### 8.5. Budget
 
@@ -309,9 +309,9 @@ Ao editar um lançamento de uma sequência recorrente, o sistema deve perguntar:
 - subcategory: FK para Subcategory
 - month: Integer (1-12)
 - year: Integer
-- plannedAmount: BigDecimal       // Valor orçado
-- createdAt: LocalDateTime
-- updatedAt: LocalDateTime
+- planned_amount: BigDecimal       // Valor orçado
+- created_at: LocalDateTime
+- updated_at: LocalDateTime
 
 ---
 

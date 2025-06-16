@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.marlonprado.ynab_clone_api.model.enums.account.AccountType;
+import br.com.marlonprado.ynab_clone_api.entity.enums.account.AccountType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
