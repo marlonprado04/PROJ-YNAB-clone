@@ -1,5 +1,9 @@
 package br.com.marlonprado.ynab_clone_api.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +17,8 @@ public class AccountService {
     private AccountRepository accountRepository;
 
     public Account save(Account account) {
-        account.setCreatedAt(java.time.LocalDateTime.now());
-        account.setUpdatedAt(java.time.LocalDateTime.now());
+        account.setCreatedAt(LocalDateTime.now());
+        account.setUpdatedAt(LocalDateTime.now());
         return accountRepository.save(account);
     }
 
@@ -22,13 +26,23 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public Optional<Account> findById(Long id) {
+        return accountRepository.findById(id);
+    }
+
     public Account update(Account account){
+        account.setUpdatedAt(LocalDateTime.now());
         return accountRepository.save(account);
     }
 
     public Account delete(Long id){
-        return accountRepository.deleteById(id);
+        Optional<Account> optionalAccount = accountRepository.findById(id);
+        if (optionalAccount.isPresent()) {
+            Account accountToDelete = optionalAccount.get();
+            accountRepository.deleteById(id);
+            return accountToDelete;
+        } else {
+            throw new RuntimeException("Account not found with id: " + id);
+        }
     }
-
-
 }
