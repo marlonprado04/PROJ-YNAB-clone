@@ -1,11 +1,9 @@
 package br.com.marlonprado.ynab_clone_api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.com.marlonprado.ynab_clone_api.entity.Account;
 import br.com.marlonprado.ynab_clone_api.service.AccountService;
@@ -14,17 +12,29 @@ import br.com.marlonprado.ynab_clone_api.service.AccountService;
 @RequestMapping("/accounts")
 public class AccountController {
 
-    @Autowired
-    private AccountService accountService;
+    private final AccountService accountService;
 
-    @GetMapping
-    public String getAccountInfos() {
-        return accountService.getAccountInfos("NUBANK");
+    public AccountController(AccountService accountService){
+        this.accountService = accountService;
     }
 
-    @PostMapping("/create/")
-    public Account createAccount(@RequestBody Account account) {
+    @GetMapping
+    public List<Account> list() {
+        return accountService.list();
+    }
+
+    @PostMapping
+    public Account create(@RequestBody Account account) {
         return accountService.save(account);
     }
 
+    @PutMapping
+    public Account update(@RequestBody Account account){
+        return accountService.update(account);
+    }
+
+    @DeleteMapping("/{id}")
+    public Account delete(@PathVariable("id") Long id){
+        return accountService.delete(id);
+    }
 }
