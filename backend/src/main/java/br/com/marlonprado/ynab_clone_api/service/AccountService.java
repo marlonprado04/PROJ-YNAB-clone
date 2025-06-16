@@ -18,7 +18,17 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    public String getAccountInfos(String name) {
-        return "Account info: " + name;
+    public List<Account> list() {
+        return accountRepository.findAll();
     }
+
+    public Account update(Account account){
+        return accountRepository.save(account);
+    }
+
+    public Account delete(Long id){
+        return accountRepository.deleteById(id);
+    }
+
+
 }
