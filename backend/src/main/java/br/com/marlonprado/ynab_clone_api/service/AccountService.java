@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.marlonprado.ynab_clone_api.dto.AccountDTO;
 import br.com.marlonprado.ynab_clone_api.entity.Account;
 import br.com.marlonprado.ynab_clone_api.repository.AccountRepository;
 
@@ -16,33 +17,39 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    public Account save(Account account) {
+    public Account save(AccountDTO accountDTO) {
+        Account account = new Account();
         account.setCreatedAt(LocalDateTime.now());
         account.setUpdatedAt(LocalDateTime.now());
         return accountRepository.save(account);
     }
 
-    public List<Account> list() {
-        return accountRepository.findAll();
+    public List<AccountDTO> list() {
+        List<Account> accounts = accountRepository.findAll();
+        return accounts.stream()
+                .map(AccountDTO::new)
+                .toList();
     }
 
-    public Optional<Account> findById(Long id) {
-        return accountRepository.findById(id);
+    public Optional<AccountDTO> findById(Long id) {
+        Optional<Account> account = accountRepository.findById(id); 
+        return account.map(AccountDTO::new);
     }
 
-    public Account update(Account account){
-        account.setUpdatedAt(LocalDateTime.now());
-        return accountRepository.save(account);
+    public Optional<AccountDTO> update(Long id, AccountDTO accountDTO) {
+        return accountRepository.findById(id)
+                .map(existingAccount -> {
+                    existingAccount.setUpdatedAt(LocalDateTime.now());
+                    Account updated = accountRepository.save(existingAccount);
+                    return new AccountDTO(updated);
+                });
     }
 
-    public Account delete(Long id){
-        Optional<Account> optionalAccount = accountRepository.findById(id);
-        if (optionalAccount.isPresent()) {
-            Account accountToDelete = optionalAccount.get();
+    public boolean delete(Long id) {
+        if (accountRepository.existsById(id)) {
             accountRepository.deleteById(id);
-            return accountToDelete;
-        } else {
-            throw new RuntimeException("Account not found with id: " + id);
+            return true;
         }
+        return false;
     }
 }
