@@ -30,7 +30,13 @@ public class AccountController {
         return accountService.list();
     }
     
-    //TODO Criar GET /accounts/{id} para detalhar conta
+    @GetMapping("/{id}")
+    public ResponseEntity<AccountDTO> findById(@PathVariable Long id) {
+        Optional<AccountDTO> account = accountService.findById(id);
+        return account
+            .map(dto -> ResponseEntity.ok(dto))
+            .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
     @PostMapping
     public ResponseEntity<AccountDTO> create(@RequestBody AccountDTO accountDTO) {
