@@ -1,4 +1,4 @@
-package br.com.marlonprado.ynab_clone_api.controller;
+package br.com.marlonprado.ynab_clone_api.account;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.marlonprado.ynab_clone_api.dto.AccountDTO;
-import br.com.marlonprado.ynab_clone_api.entity.Account;
-import br.com.marlonprado.ynab_clone_api.service.AccountService;
 
 
 @RestController
@@ -34,11 +30,13 @@ public class AccountController {
         return accountService.list();
     }
     
+    //TODO Criar GET /accounts/{id} para detalhar conta
 
     @PostMapping
     public ResponseEntity<AccountDTO> create(@RequestBody AccountDTO accountDTO) {
-        Account created = accountService.save(accountDTO);
-        return new ResponseEntity<>(new AccountDTO(created), HttpStatus.CREATED);
+        AccountEntity created = accountService.save(accountDTO);
+        return new ResponseEntity<>(AccountDTO.fromEntity(created), HttpStatus.CREATED);
+
     }
 
     @PutMapping("/{id}")

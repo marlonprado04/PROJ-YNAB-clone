@@ -1,6 +1,6 @@
-package br.com.marlonprado.ynab_clone_api.entity.enums.transaction;
+package br.com.marlonprado.ynab_clone_api.transaction;
 
-public enum RecurrenceFrequency {
+public enum RecurrenceFrequencyEnum {
     ONCE,
     DAILY, 
     WEEKLY, 

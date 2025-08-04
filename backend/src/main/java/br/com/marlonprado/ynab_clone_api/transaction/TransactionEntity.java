@@ -1,13 +1,11 @@
-package br.com.marlonprado.ynab_clone_api.entity;
+package br.com.marlonprado.ynab_clone_api.transaction;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.RecurrenceFrequency;
-import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.RecurrenceType;
-import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.Status;
-import br.com.marlonprado.ynab_clone_api.entity.enums.transaction.TransactionType;
+import br.com.marlonprado.ynab_clone_api.account.AccountEntity;
+import br.com.marlonprado.ynab_clone_api.subcategory.SubcategoryEntity;
 import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -23,7 +21,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "transaction")
-public class Transaction {
+public class TransactionEntity {
 
     @Id
     @GeneratedValue
@@ -40,31 +38,31 @@ public class Transaction {
     private LocalDateTime updatedAt;
 
     @Enumerated(EnumType.STRING)
-    private RecurrenceType recurrenceType;
+    private RecurrenceTypeEnum recurrenceType;
 
     @Enumerated(EnumType.STRING)
-    private RecurrenceFrequency recurrenceFrequency;
+    private RecurrenceFrequencyEnum recurrenceFrequency;
 
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private StatusEnum status;
 
     @ManyToOne
     @JoinColumn(name = "from_account_id")
     @NotNull
-    private Account fromAccount;
+    private AccountEntity fromAccount;
 
     @ManyToOne
     @JoinColumn(name = "to_account_id")
     @Nullable
-    private Account toAccount;
+    private AccountEntity toAccount;
 
     @ManyToOne
     @JoinColumn(name = "subcategory_id")
     @Nullable
-    private Subcategory subcategory;
+    private SubcategoryEntity subcategory;
 
     private UUID transferGroupId;
     private UUID groupId;

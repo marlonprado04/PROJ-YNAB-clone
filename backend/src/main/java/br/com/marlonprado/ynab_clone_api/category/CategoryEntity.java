@@ -1,8 +1,9 @@
-package br.com.marlonprado.ynab_clone_api.entity;
+package br.com.marlonprado.ynab_clone_api.category;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import br.com.marlonprado.ynab_clone_api.subcategory.SubcategoryEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "category")
-public class Category {
+public class CategoryEntity {
 
     @Id
     @GeneratedValue
@@ -25,6 +26,6 @@ public class Category {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "category")
-    private List<Subcategory> subcategories;
+    private List<SubcategoryEntity> subcategories;
 
 }

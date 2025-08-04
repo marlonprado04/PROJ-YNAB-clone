@@ -1,7 +1,8 @@
-package br.com.marlonprado.ynab_clone_api.entity;
+package br.com.marlonprado.ynab_clone_api.budget;
 
 import java.time.LocalDateTime;
 
+import br.com.marlonprado.ynab_clone_api.subcategory.SubcategoryEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "budget")
-public class Budget {
+public class BudgetEntity {
     @Id
     @GeneratedValue
     private Long id;
@@ -25,5 +26,5 @@ public class Budget {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "subcategory_id")
-    private Subcategory subcategory;
+    private SubcategoryEntity subcategory;
 }

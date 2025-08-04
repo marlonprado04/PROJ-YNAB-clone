@@ -1,36 +1,36 @@
-2025-06-15 23:51:17.294122-03:00 jdbc[3]: exception
+2025-08-02 22:45:38.186443-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-06-15 23:51:17.609306-03:00 jdbc[3]: exception
+2025-08-02 22:45:38.512121-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]
-2025-06-15 23:52:46.481878-03:00 jdbc[3]: exception
+2025-08-03 20:21:43.306987-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-06-15 23:52:46.792878-03:00 jdbc[3]: exception
+2025-08-03 20:21:43.558367-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]
-2025-06-15 23:53:56.709984-03:00 jdbc[3]: exception
+2025-08-03 20:50:26.234223-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-06-15 23:53:56.998108-03:00 jdbc[3]: exception
+2025-08-03 20:50:26.496922-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]
-2025-06-15 23:58:31.374192-03:00 jdbc[3]: exception
+2025-08-03 21:20:07.527974-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-06-15 23:58:31.524703-03:00 jdbc[3]: exception
+2025-08-03 21:20:07.636463-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]
-2025-06-17 14:07:55.543791-03:00 jdbc[3]: exception
+2025-08-03 21:27:23.187635-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-06-17 14:07:55.666115-03:00 jdbc[3]: exception
+2025-08-03 21:27:23.300250-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]
-2025-07-21 22:11:01.892256-03:00 jdbc[3]: exception
+2025-08-03 21:30:24.613765-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create global temporary table HTE_budget([*]month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL"; expected "identifier"; SQL statement:
 create global temporary table HTE_budget(month integer, rn_ integer not null, year integer, created_at timestamp(6), id bigint, subcategory_id bigint, updated_at timestamp(6), planned_amount varchar(255), primary key (rn_)) TRANSACTIONAL [42001-232]
-2025-07-21 22:11:02.026643-03:00 jdbc[3]: exception
+2025-08-03 21:30:24.720249-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table budget (id bigint not null, created_at timestamp(6), [*]month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id))"; expected "identifier"; SQL statement:
 create table budget (id bigint not null, created_at timestamp(6), month integer, planned_amount varchar(255), updated_at timestamp(6), year integer, subcategory_id bigint not null, primary key (id)) [42001-232]

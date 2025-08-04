@@ -12,6 +12,7 @@
     - [💡 Soluções / Estratégias](#-soluções--estratégias)
     - [🔗 Referências](#-referências)
     - [📌 Pendências](#-pendências)
+  - [02/08/2025 - DDD](#02082025---ddd)
   - [14/06/2025 - Decisoes arquiteturais (DDD, Clean, etc) e null](#14062025---decisoes-arquiteturais-ddd-clean-etc-e-null)
     - [✅ Objetivo](#-objetivo-1)
     - [⚙️ Decisões Técnicas](#️-decisões-técnicas-1)
@@ -45,6 +46,12 @@
 
 ### 📌 Pendências
 
+
+## 02/08/2025 - DDD
+
+- Seguirei DDD pra deixar mais fácil a navegação, compartilhamento de código e open source
+
+- https://www.youtube.com/watch?v=GE6asEjTFv8 
 
 ## 14/06/2025 - Decisoes arquiteturais (DDD, Clean, etc) e null 
 
