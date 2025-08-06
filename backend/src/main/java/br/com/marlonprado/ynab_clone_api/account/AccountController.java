@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException.BadRequest;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
@@ -40,6 +42,10 @@ public class AccountController {
 
     @PostMapping
     public ResponseEntity<AccountDTO> create(@RequestBody AccountDTO accountDTO) {
+        List<AccountDTO> existAccount = accountService.list();
+        if(existAccount.stream().anyMatch(a -> a.getId() == accountDTO.getId())) {
+            throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Já existe uma conta com o ID informado.");
+        }
         AccountEntity created = accountService.save(accountDTO);
         return new ResponseEntity<>(AccountDTO.fromEntity(created), HttpStatus.CREATED);
 
