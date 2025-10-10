@@ -1,45 +1,64 @@
 # 💸 YNAB Clone – Clone Simples do YNAB
 
-Aplicativo pessoal de orçamento financeiro inspirado no YNAB (You Need A Budget).
+Aplicativo pessoal de **orçamento financeiro offline**, inspirado no **YNAB (You Need A Budget)**, desenvolvido com **Python (Django REST Framework)**, **React**, **SQLite** e **Electron**.
+
+---
 
 ## 🎯 Objetivos
 
-- Desenvolver uma aplicação pessoal de finanças com **Spring Boot**, **SQLite**, **Angular (SPA frontend)** e **Electron**.
-- Usar o método de orçamento por **envelopes** para controle financeiro.
-- Foco em uso pessoal, offline e multiplataforma.
-- Portfólio profissional e aprendizado de boas práticas.
+- Desenvolver uma aplicação pessoal de finanças com **Django REST Framework**, **SQLite**, **React (SPA frontend)** e **Electron**.  
+- Aplicar o método de orçamento por **envelopes** para controle financeiro.  
+- Foco em **uso pessoal**, **offline** e **multiplataforma**.  
+- Servir como **portfólio profissional** e aprendizado de arquitetura fullstack com Python.  
 
-### 🥇 Fase 1 – Aplicativo local e offline
-- Backend local com **SQLite** via **Prisma ORM**, rodando no próprio computador.
-- Frontend React empacotado com **Electron** como app desktop.
-- Funcional sem necessidade de internet, ideal para uso pessoal.
+---
 
-### 🌐 Fase 2 – Aplicativo com sincronização remota (opcional)
-- APIs web para sincronização em nuvem (autenticação, backup e multi-dispositivo).
-- Banco remoto com **PostgreSQL** em **VPS**.
-- Integração com futuros apps móveis.
+### 🥇 Fase 1 – Aplicativo Local e Offline
 
-### 📌 Conceitos aplicados
-- Arquitetura limpa e modular no backend.
-- Boas práticas de autenticação e segurança.
-- Deploy em produção com **Docker** e **HTTPS**.
-- Desenvolvimento multiplataforma com **React + Electron + Capacitor/Flutter**.
+- Backend local com **Django REST Framework** e **SQLite**, rodando no próprio computador.  
+- Frontend em **React + TypeScript**, empacotado com **Electron** como app desktop.  
+- Totalmente funcional **sem necessidade de internet**, ideal para uso pessoal.  
+- Sem autenticação (modo single-user).  
+
+---
+
+### 🌐 Fase 2 – Aplicativo com Sincronização Remota (opcional)
+
+- API web para sincronização e backup em nuvem.  
+- Autenticação de usuário e suporte multi-dispositivo.  
+- Banco de dados remoto com **PostgreSQL** hospedado em **VPS**.  
+- Integração futura com aplicativos móveis.  
+
+---
+
+### 📌 Conceitos Aplicados
+
+- Arquitetura modular e limpa entre backend e frontend.  
+- Organização em camadas no backend: **models**, **serializers**, **views** e **services**.  
+- Comunicação via **API RESTful local**.  
+- Persistência local leve com **SQLite**.  
+- Empacotamento multiplataforma via **Electron**.  
+- Planejamento baseado em requisitos funcionais definidos.  
+
+---
 
 ## 🛠️ Stack Tecnológica
 
-- **Backend:** Node.js, Express, TypeScript, Prisma ORM, SQLite (local), PostgreSQL (remoto), Docker.
-- **Frontend:** React + Vite, TypeScript, Tailwind CSS, Electron.
-- **Mobile:** Flutter (futuro).
-- **DevOps:** Docker.
+- **Backend:** Python, Django REST Framework, SQLite (local), PostgreSQL (remoto opcional).  
+- **Frontend:** React + Vite, TypeScript, Tailwind CSS, Electron.  
+- **ORM:** Django ORM.  
+- **DevOps (futuro):** Docker.  
+
+---
 
 ## 🏗️ Arquitetura
 
-- **Fase 1:** App local (Express + SQLite + React/Electron).
-- **Fase 2:** Sincronização remota (PostgreSQL, autenticação JWT, deploy em VPS).
+- **Fase 1:** App local (Django REST + SQLite + React/Electron).  
+- **Fase 2:** Sincronização remota (PostgreSQL, autenticação JWT, deploy em VPS).  
 
-## 📚 Planejamento e Tarefas
+---
 
-Veja o planejamento detalhado, cronograma e tarefas em [docs/PLANEJAMENTO.md](docs/PLANEJAMENTO.md).
+---
 
 ## 📄 Licença
 
