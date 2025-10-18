@@ -8,7 +8,7 @@ Link do minicurso Python de apoio:
 
 - https://pages.hashtagtreinamentos.com/minicurso-python-primeiro-site-obrigado?_gl=1*1natzyh*_gcl_au*MTE4NTg1MTg5OC4xNzU5NDU1MDQ5LjExODI1Mjg3NDMuMTc2MDEwMTc4Ni4xNzYwMTAxNzkw
 
-### Comandos
+### Comandos (aula 1, 2 e 3) - Introducao e iniciando projeto
 
 
 Para iniciar o projeto:
@@ -17,4 +17,10 @@ Para iniciar o projeto:
 
 Pra rodar o servidor:
 
-`.\manage.py runserver`
+`python manage.py runserver`
+
+Para criar uma app dentro do Django:
+
+`python .\manage.py startapp tests`
+
+### Aula 4 - Criando o banco de dados 
