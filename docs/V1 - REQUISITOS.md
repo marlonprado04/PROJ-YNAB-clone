@@ -67,20 +67,22 @@ Requisitos para o desenvolvimento de um aplicativo de **gestão financeira pesso
 ## 4. Arquitetura Técnica
 
 ### 4.1 Backend
-- **Framework**: Django REST Framework.  
-- **Banco**: SQLite (persistência local).  
-- **ORM**: Django ORM.  
-- **Autenticação**: não incluída no MVP (single user offline first).  
-- **Convenção de nomenclatura:**
-  - Modelos e atributos no backend (Python/Django): `snake_case` (ex.: `transaction_type`, `balance_date`)
-  - Colunas e tabelas no banco de dados: `snake_case` (ex.: `planned_amount`, `is_budget_included`)
-  - Payloads da API (JSON) consumidos pelo frontend: `camelCase` (ex.: `balanceDate`, `isBudgetIncluded`)
+- **Framework:** FastAPI  
+- **Banco:** SQLite (persistência local)  
+- **ORM:** SQLModel (baseada em SQLAlchemy)  
+- **Autenticação:** não incluída no MVP (single user offline-first)  
 
-- Justificativa de stack:
-  - Django REST: rápido para desenvolvimento e testes, bom ORM
-  - React: interface responsiva e modular
+- **Convenção de nomenclatura:**
+  - Modelos e atributos (Python/FastAPI): `snake_case`
+  - Banco de dados: `snake_case`
+  - Payloads da API (JSON): `camelCase`
+
+- **Justificativa da stack:**
+  - FastAPI: rápida, simples e eficiente para APIs locais
+  - SQLModel: ORM leve e fortemente tipada
+  - React: interface modular
   - Electron: empacotamento desktop multiplataforma
-- Persistência de dados local (SQLite) com futura sincronização em nuvem opcional
+
 
 
 ### 4.2 Frontend
@@ -167,6 +169,9 @@ Requisitos para o desenvolvimento de um aplicativo de **gestão financeira pesso
 - Uso em desktop single user 100% offline
 - Performance: carregamento de dados < 2s para até 10.000 lançamentos
 - Compatibilidade: Windows e Linux via Electron
+- API documentada automaticamente via Swagger (http://localhost:8000/docs)
+- Tipagem e validação automáticas com Pydantic
+
 
 ---
 
