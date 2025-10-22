@@ -5,7 +5,7 @@
 - [x] Criar TLDRAW com telas simplificadas  
 - [x] Criar diagrama ERD V1  
 - [x] Definir convenções de código e padrões de nomenclatura  
-- [ ] Estruturar repositório com pastas (backend, frontend, docs, etc.)  
+- [x] Estruturar repositório com pastas (backend, frontend, docs, etc.)  
 
 ---
 
