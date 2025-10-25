@@ -258,7 +258,6 @@ Requisitos para o desenvolvimento de um aplicativo de **gestão financeira pesso
 
 - Todos os endpoints e modelos usam o padrão de nomenclatura em inglês. 
 - A interface do usuário será apresentada em português.
-- Todos os endpoints usam padrão **camelCase** no JSON.  
 
 ### 9.1 Accounts
 - `GET /accounts`
