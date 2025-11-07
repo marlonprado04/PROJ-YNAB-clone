@@ -1,3 +1,10 @@
+## Índice
+- [Índice](#índice)
+- [1. Requisitos funcionais para versões futuras](#1-requisitos-funcionais-para-versões-futuras)
+  - [1.1. Lançamentos recorrentes](#11-lançamentos-recorrentes)
+    - [1.1.1 Detalhamento](#111-detalhamento)
+  - [1.2. Funcionalidades Futuras (não incluídas no MVP)](#12-funcionalidades-futuras-não-incluídas-no-mvp)
+
 
 ## 1. Requisitos funcionais para versões futuras
 
