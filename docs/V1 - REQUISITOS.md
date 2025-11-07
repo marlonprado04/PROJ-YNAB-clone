@@ -105,7 +105,7 @@ Requisitos para o desenvolvimento de um aplicativo de **gestão financeira pesso
   - `is_budget_included` (boolean)
   - `balance_date`
 - Cálculo automático:
-  - **Current Balance** com base em lançamentos finalizados dentro daquela determinada conta
+  - **Balance** com base em lançamentos finalizados dentro daquela determinada conta
   - **Projected Balance** considerando lançamentos finalizados + futuros dentro daquela determinada conta
 - Listagem clara de contas com saldos
 - Regra simples: não permitir saldo negativo em conta do tipo `CASH`

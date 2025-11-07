@@ -14,7 +14,7 @@ Definidas as seguintes convenções e estrutura:
 - Classes → PascalCase (Account, TransactionService)  
 - Variáveis/funções → snake_case (calculate_balance, from_account_id)  
 - Endpoints → kebab-case (/accounts, /transactions)  
-- JSON payload → camelCase (balanceDate, isBudgetIncluded)  
+- JSON payload → kebab-case (balance-date)  
 - Constantes globais → UPPER_SNAKE_CASE (DEFAULT_BUDGET_AMOUNT)  
 - Commits → padrão type: descrição (feat: adiciona endpoint de contas)  
 
