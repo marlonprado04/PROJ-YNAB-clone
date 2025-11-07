@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -325.8476,
-    "scrollLeft": -62.7113,
+    "scrollTop": -328.8476,
+    "scrollLeft": -336.7113,
     "zoomLevel": 0.79,
     "show": 431,
     "database": 4,
@@ -1389,20 +1389,7 @@
         }
       }
     },
-    "indexEntities": {
-      "C9ajDdpFX78Of6rNLPjFr": {
-        "id": "C9ajDdpFX78Of6rNLPjFr",
-        "name": "",
-        "tableId": "BHyuVToRyf3WLLs7DDZJc",
-        "indexColumnIds": [],
-        "seqIndexColumnIds": [],
-        "unique": false,
-        "meta": {
-          "updateAt": 1761090853768,
-          "createAt": 1761090853768
-        }
-      }
-    },
+    "indexEntities": {},
     "indexColumnEntities": {},
     "memoEntities": {
       "710m79wnSVsFAAR5civkT": {
